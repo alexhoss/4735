@@ -28,4 +28,9 @@ node {
             app.push("latest")
         }
     }
+    stage('Deploy image') {
+        //Push image with build number and latest tag
+        sh "node main.js"
+        }
+    }
 }
