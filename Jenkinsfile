@@ -28,5 +28,16 @@ node {
             app.push("latest")
         }
     }
+
+    //   stage('Push to heroku') {
+    //   steps{
+    //     sh "heroku create"
+    //   }
+
+    //     stage('Remove Unused docker image') {
+    //   steps{
+    //     sh "docker rmi $registry:$BUILD_NUMBER"
+    //   }
+    // }
     
 }
