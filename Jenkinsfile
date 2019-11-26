@@ -30,7 +30,7 @@ node {
     }
 
       stage('Push to heroku and release') {
-      steps{
+    
         sh "docker build -t registry.heroku.com/helloworld/web ."
 
         sh "docker tag 1 registry.heroku.com/boiling-ocean-39734/web"
@@ -46,5 +46,5 @@ node {
     //   }
     // }
     
-}
+
 }
