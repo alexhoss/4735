@@ -29,10 +29,16 @@ node {
         }
     }
 
-    //   stage('Push to heroku') {
-    //   steps{
-    //     sh "heroku create"
-    //   }
+      stage('Push to heroku and release') {
+      steps{
+        sh "docker build -t registry.heroku.com/helloworld/web ."
+
+        sh "docker tag 1 registry.heroku.com/boiling-ocean-39734/web"
+        sh "docker push registry.heroku.com/boiling-ocean-39734/web"
+
+        sh "heroku container:push web -a boiling-ocean-39734"
+        sh "heroku container:release web -a boiling-ocean-39734"
+      }
 
     //     stage('Remove Unused docker image') {
     //   steps{
