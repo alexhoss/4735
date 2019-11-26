@@ -31,10 +31,10 @@ node {
 
       stage('Push to heroku and release') {
     
-        sh "docker build -t registry.heroku.com/helloworld/web ."
+        sh "docker build -t registry.heroku.com/helloworld/web:1.0 ."
 
-        sh "docker tag registry.heroku.com/boiling-ocean-39734/web:latest"
-        sh "docker push registry.heroku.com/boiling-ocean-39734/web:latest"
+        sh "docker tag 1.0 registry.heroku.com/boiling-ocean-39734/web"
+        sh "docker push registry.heroku.com/boiling-ocean-39734/web"
 
         sh "heroku container:push web -a boiling-ocean-39734"
         sh "heroku container:release web -a boiling-ocean-39734"
