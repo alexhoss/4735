@@ -30,6 +30,7 @@ node {
     }
 
       stage('Push to heroku and release') {
+          sh "docker login --username=_ --password=a5220ff8-cb7b-40ce-8f6d-4403cc9114a5 registry.heroku.com"
     
         sh "docker build -t registry.heroku.com/helloworld/web:1.0 ."
 
