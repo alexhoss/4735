@@ -37,7 +37,7 @@ node {
        //sh "docker tag 1.0 registry.heroku.com/peaceful-woodland-64656/web:latest"
         sh "docker push registry.heroku.com/peaceful-woodland-64656/web"
 
-         sh "heroku container:push web -a peaceful-woodland-64656"
+         sh "sudo heroku container:push web -a peaceful-woodland-64656"
          sh "sudo heroku container:release web -a peaceful-woodland-64656"
       }
 
