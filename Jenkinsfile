@@ -16,7 +16,7 @@ node {
         //TODO add tests
         app.inside {
             sh 'make test'
-            sh 'curl localhost:3000'
+            sh 'curl -f http://127.0.0.1:3000 || exit 1'
         }
     }
 
