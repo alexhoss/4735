@@ -5,7 +5,7 @@ var should = require('chai').should();
 it('Main page content', function(done) {
     request('http://localhost:3000' , function(error, response, body) {
         //expect(body).to.equal('Hello Changeds world 4!');
-        expect(body).to.equal('Hello Changeds world 4!');
+        expect(body).to.equal('Hello World');
         should.exist(body)
         done();
     });
