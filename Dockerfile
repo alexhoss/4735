@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package.json .
 RUN npm install
 COPY main.js .
-COPY /test .
+COPY test .
 
 CMD ["node", "main.js"]
 CMD ["npm", "test"]
