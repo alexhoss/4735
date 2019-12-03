@@ -9,13 +9,13 @@ node {
 
     stage('Build image') {
     // Build the image
-        app = docker.build("alexhoss/helloworld")
+        app = docker.build("alexhoss/helloworld", "./dockerfiles/test")
     }
 
     stage('Test image') {
         //TODO add tests
         app.inside {
-            sh 'echo test passed'
+            sh 'make test'
         }
     }
 
