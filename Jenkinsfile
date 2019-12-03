@@ -16,6 +16,7 @@ node {
         //TODO add tests
         app.inside {
             sh 'make test'
+            sh 'curl localhost'
         }
     }
 

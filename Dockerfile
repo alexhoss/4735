@@ -1,5 +1,6 @@
 FROM node:10-alpine
 RUN apk add --update make
+RUN apk add --update curl
 WORKDIR /app
 COPY package.json .
 RUN npm install
