@@ -15,7 +15,7 @@ node {
     stage('Test image') {
         //TODO add tests
         app.inside {
-            sh 'make run'
+            sh 'make all'
         }
     }
 
