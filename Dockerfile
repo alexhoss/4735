@@ -5,7 +5,7 @@ COPY package.json .
 RUN npm install
 COPY main.js .
 CMD ["node", "main.js"]
-
+CMD ["npm", "test"]
 LABEL maintainer "ahosseini7@my.bcit.ca"
 
 
