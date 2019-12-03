@@ -40,7 +40,7 @@ node {
 
         stage('Remove Unused docker image') {
      
-        sh "docker rmi \$(docker images -f \"dangling=true\" -q)"
+        sh "docker images purge"
       }
     
     
