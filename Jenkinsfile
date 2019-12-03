@@ -13,10 +13,8 @@ node {
     }
 
     stage('Test image') {
-        //TODO add tests
         app.inside {
             sh 'make test'
-            sh 'curl -f http://127.0.0.1:3000 || exit 1'
         }
     }
 
@@ -33,18 +31,18 @@ node {
         sh "docker login --username=_ --password=a5220ff8-cb7b-40ce-8f6d-4403cc9114a5 registry.heroku.com"
         sh "docker build -t registry.heroku.com/helloworld/web:1.0 ."
 
-       //sh "docker tag 1.0 registry.heroku.com/peaceful-woodland-64656/web:latest"
+
         sh "docker push registry.heroku.com/peaceful-woodland-64656/web"
 
          sh "heroku container:push web -a peaceful-woodland-64656"
          sh "heroku container:release web -a peaceful-woodland-64656"
       }
 
-    //     stage('Remove Unused docker image') {
-    //   steps{
-    //     sh "docker rmi $registry:$BUILD_NUMBER"
-    //   }
-    // }
+        stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi ${registry:$BUILD_NUMBER}"
+      }
+    }
     
 
 }
