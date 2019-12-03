@@ -14,9 +14,8 @@ node {
 
     stage('Test image') {
         //TODO add tests
-
         app.inside {
-            sh 'curl localhost:3000'
+            sh 'make test'
         }
     }
 
