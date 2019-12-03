@@ -1,0 +1,51 @@
+Spin up an ubuntu instance.
+Open port 8080, 22, and 8000.
+Attach an elastic IP.
+
+sudo apt update
+sudo apt install openjdk-8-jdk
+#import GPG Keys of jenkins
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+
+# Add jenkins repo to system
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+sudo apt update
+sudo apt install jenkins
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+f3af6a6e159540b2b8810d009c4ae16c
+
+Build Trigger -> GitHub hook trigger for GITScm polling
+Advanced Project Options -> Pipeline script from SCM -> SCM -> Git -> Enter Repo URL
+
+Add github Webhook
+
+sudo apt install docker.io
+sudo systemctl start docker
+
+sudo snap install --classic heroku
+
+
+sudo usermod -a -G docker jenkins
+
+sudo chmod 777 /var/run/docker.sock
+
+global user name jenkins
+
+
+
+heroku login -i
+
+heroku create
+
+
+heroku container:push web
+
+
+
+http://44.229.108.198:8080/job/Pipeline/18/
+
+
+

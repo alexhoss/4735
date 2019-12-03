@@ -9,7 +9,6 @@ node {
 
     stage('Build image') {
     // Build the image
-
         app = docker.build("alexhoss/helloworld")
     }
 
@@ -17,7 +16,7 @@ node {
         //TODO add tests
 
         app.inside {
-            sh 'echo "Tests passed"'
+            sh 'curl localhost:3000'
         }
     }
 
