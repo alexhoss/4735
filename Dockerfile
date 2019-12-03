@@ -1,5 +1,5 @@
 FROM node:10-alpine
-RUN apt-get update && apt-get install make
+RUN apk add --update make
 WORKDIR /app
 COPY package.json .
 RUN npm install
